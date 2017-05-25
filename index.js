@@ -24,34 +24,49 @@ fs.readFile('sketch-hello-world.sketch', function(err, data) {
 				const layerTwo = json.layers[1];
 
 				// Layer one name
-				const vader = "Obi Wan never told you what happened to your father";
+				const vader = "Vader: Obi Wan never told you what happened to your father";
 				
 				// Layer two name
-				const luke = "He told me you killed him";
+				const luke = "He told me you killed him!";
 
 
-				const isVaderLukesFather = true;
-				const likeFatherLikeSon = "NOOOOOOOOO!";
+				const isVaderLukesFather = false;
+				const likeFatherLikeSon = "Luke: NOOOOOOOOO!";
 
 				// Check for layer names
-				console.log("Before running the heToldMeEnough(), layerOne's name is: " + layerOne.name);
-				console.log("Before running the heToldMeEnough() layerTwo's name is: " + layerTwo.name);
 
-				console.log(vader);
 				// changes name for layers 
 				function heToldMeEnough() {
-					console.log("heToldMeEnough!");
+					console.log("Luke: heToldMeEnough,");
 					console.log(layerTwo.name);
 
 					if(isVaderLukesFather == true) {
-						layerOne.name = "No -- I am your father";
+						layerOne.name = "Vader: No -- I am your father";
 						console.log(layerOne.name);
 						layerTwo.name = likeFatherLikeSon;
 						console.log(layerTwo.name);
-					}	
+					}	else if(isVaderLukesFather == false) {
+						layerTwo.name = "I HAAATE YOU!!!";
+						console.log(layerTwo.name);
+						layerOne.name = ("Anakin (feeling nostalgic): What is this? A crossover episode?!");
+						console.log(layerOne.name);
+					}
 				}
 
-				heToldMeEnough();
+				function reset() {
+						layerOne.name = vader; 
+						layerTwo.name = luke;
+					}
+
+
+				function plotTwist() {
+					console.log(vader);
+					heToldMeEnough();
+					reset();
+				}
+
+				plotTwist();
+				
 		
 
 
@@ -66,7 +81,7 @@ fs.readFile('sketch-hello-world.sketch', function(err, data) {
 				.generateNodeStream({ type:'nodebuffer', streamFiles:true })
 				.pipe(fs.createWriteStream('sketch-hello-world.sketch'))
 				.on('finish', () => {
-					console.log('Mario saved Princess Sketch File!');
+					console.log('* And that\'s a wrap on this weeks episode of Father and Son Bonding Time *');
 				});
 			});
 	});
