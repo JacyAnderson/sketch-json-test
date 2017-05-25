@@ -1,0 +1,23 @@
+{
+  "name": "sketch-json-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacyAnderson/sketch-json-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacyAnderson/sketch-json-test/issues"
+  },
+  "homepage": "https://github.com/JacyAnderson/sketch-json-test#readme",
+  "dependencies": {
+    "jszip": "^3.1.3"
+  }
+}
